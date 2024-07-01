@@ -25,7 +25,7 @@ import org.reflections.Reflections;
  * Annotation or not and also checks that for enum fields containing enumerated
  * annotation, whether enumerated annotation contains Enum String Value or not
  */
-@Mojo(name = "validate-enum-str", defaultPhase = LifecyclePhase.COMPILE, requiresDependencyResolution = ResolutionScope.TEST)
+@Mojo(name = "validate-enum-str", defaultPhase = LifecyclePhase.PROCESS_RESOURCES, requiresDependencyResolution = ResolutionScope.TEST)
 public class EnumeratedAnnotationCheckerMojo extends AbstractMojo {
 
 	/**
