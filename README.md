@@ -1,12 +1,13 @@
-# Maven PlugIn :: validate-enum-str
-This PlugiN will Validate Enum attributes in the Hibernate Model Class have Enumerated String annotation or not
+# Maven Plugin :: validate-enum-str
+This Plugin will Validate Enum attributes in the Hibernate Model Class have Enumerated String annotation or not
 
 ## Problem Statement
+This Plugin will Validate Enum attributes in the Hibernate Model Class have Enumerated String annotation or not
 
 ## Solution
+This Plugin will Validate Enum attributes in the Hibernate Model Class have Enumerated String annotation or not
 
-
-# How to use this PlugIn in your project
+# How to use this Plugin in your project
 
 To use this, Include the below in your project plugins section of pom.xml
 
@@ -33,8 +34,8 @@ To use this, Include the below in your project plugins section of pom.xml
 * pkg : Name of the Java Package contains all the Hibernate Model Classes
 		* Default value : No Default value
 		* Mandatory : Mandatory
-		* Description : 
-		* Example : 
+		* Description : Name of the Java Package contains all the Hibernate Model Classes
+		* Example : com.merusphere.dao.model
 	
 
 
@@ -67,5 +68,5 @@ Please refer to https://github.com/MeruSphereOss/mvn-plugin-validate-enum-str/re
 Please report all the issues to Gitub issues https://github.com/MeruSphereOss/mvn-plugin-validate-enum-str/issues
 
 ## Contribution
-Please finish your development and create branch then Please crate a Github Issue at Gitub issues https://github.com/MeruSphereOss/mvn-plugin-validate-enum-str/issues with the feature details & branch details. One of the Maintainer will co-ordinate with you.
+Please finish your development and create branch then Please create a Github Issue at Gitub issues https://github.com/MeruSphereOss/mvn-plugin-validate-enum-str/issues with the feature details & branch details. One of the Maintainer will co-ordinate with you.
 

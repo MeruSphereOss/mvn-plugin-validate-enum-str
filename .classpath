@@ -32,7 +32,7 @@
   <classpathentry kind="var" path="M2_REPO/org/apache/maven/resolver/maven-resolver-util/1.9.10/maven-resolver-util-1.9.10.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/maven/resolver/maven-resolver-impl/1.9.10/maven-resolver-impl-1.9.10.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/maven/resolver/maven-resolver-named-locks/1.9.10/maven-resolver-named-locks-1.9.10.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar" sourcepath="M2_REPO/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar" sourcepath="M2_REPO/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/maven/shared/maven-shared-utils/3.3.4/maven-shared-utils-3.3.4.jar" sourcepath="M2_REPO/org/apache/maven/shared/maven-shared-utils/3.3.4/maven-shared-utils-3.3.4-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/google/inject/guice/5.1.0/guice-5.1.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/aopalliance/aopalliance/1.0/aopalliance-1.0.jar"/>
@@ -52,14 +52,13 @@
   <classpathentry kind="var" path="M2_REPO/org/reflections/reflections/0.10.2/reflections-0.10.2.jar" sourcepath="M2_REPO/org/reflections/reflections/0.10.2/reflections-0.10.2-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/javassist/javassist/3.28.0-GA/javassist-3.28.0-GA.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar" sourcepath="M2_REPO/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-context/5.3.12/spring-context-5.3.12.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-aop/5.3.12/spring-aop-5.3.12.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-beans/5.3.12/spring-beans-5.3.12.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-core/5.3.12/spring-core-5.3.12.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-jcl/5.3.12/spring-jcl-5.3.12.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-expression/5.3.12/spring-expression-5.3.12.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/security/spring-security-core/5.5.3/spring-security-core-5.5.3.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/security/spring-security-crypto/5.5.3/spring-security-crypto-5.5.3.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar" sourcepath="M2_REPO/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.2.Final/hibernate-jpa-2.1-api-1.0.2.Final.jar" sourcepath="M2_REPO/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.2.Final/hibernate-jpa-2.1-api-1.0.2.Final-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-context/5.3.37/spring-context-5.3.37.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-aop/5.3.37/spring-aop-5.3.37.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-beans/5.3.37/spring-beans-5.3.37.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-core/5.3.37/spring-core-5.3.37.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-jcl/5.3.37/spring-jcl-5.3.37.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-expression/5.3.37/spring-expression-5.3.37.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/security/spring-security-core/5.8.13/spring-security-core-5.8.13.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/security/spring-security-crypto/5.8.13/spring-security-crypto-5.8.13.jar"/>
 </classpath>
