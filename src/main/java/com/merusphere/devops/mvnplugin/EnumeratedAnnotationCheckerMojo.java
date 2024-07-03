@@ -10,9 +10,9 @@ import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.Table;
 
 import org.apache.maven.artifact.Artifact;
 import org.apache.maven.plugin.AbstractMojo;
@@ -69,11 +69,11 @@ public class EnumeratedAnnotationCheckerMojo extends AbstractMojo {
 			for (String element : runtimeElements) {
 				urls.add(new File(element).toURI().toURL());
 			}
-			List<String> compiletimeElements = project.getRuntimeClasspathElements();
+			List<String> compiletimeElements = project.getCompileClasspathElements();
 			for (String element : compiletimeElements) {
 				urls.add(new File(element).toURI().toURL());
 			}
-			List<String> systemtimeElements = project.getRuntimeClasspathElements();
+			List<String> systemtimeElements = project.getSystemClasspathElements();
 			for (String element : systemtimeElements) {
 				urls.add(new File(element).toURI().toURL());
 			}
@@ -90,14 +90,13 @@ public class EnumeratedAnnotationCheckerMojo extends AbstractMojo {
 			}
 
 			// Load the Classpath
-			ClassLoader contextClassLoader = URLClassLoader.newInstance(urls.toArray(new URL[0]),
+			ClassLoader contextClassLoader = URLClassLoader.newInstance(urls.toArray(new URL[urls.size()]),
 					Thread.currentThread().getContextClassLoader());
 
 			Thread.currentThread().setContextClassLoader(contextClassLoader);
-			getLog().info(contextClassLoader.getName());
 
 			Reflections reflections = new Reflections(pkg);
-			Set<Class<?>> clazzSet = reflections.getTypesAnnotatedWith(Entity.class, true);
+			Set<Class<?>> clazzSet = reflections.getTypesAnnotatedWith(Table.class, true);
 
 			if (clazzSet == null || clazzSet.isEmpty()) {
 				if (getLog().isInfoEnabled()) {

@@ -15,7 +15,7 @@ To use this, Include the below in your project plugins section of pom.xml
 			<plugin>
 				<groupId>com.merusphere.devops</groupId>
 				<artifactId>mvnplugin.validate-enum-str</artifactId>
-				<version>0.9.3</version>
+				<version>0.9.4</version>
 				<executions>
 					<execution>
 						<phase>compile</phase>

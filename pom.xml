@@ -7,7 +7,7 @@
 
 	<groupId>com.merusphere.devops</groupId>
 	<artifactId>mvnplugin.validate-enum-str</artifactId>
-	<version>0.9.3</version>
+	<version>0.9.4</version>
 	<packaging>maven-plugin</packaging>
 
 	<name>Validate Enum attribute has Enumerated String annotation or not</name>
@@ -193,7 +193,7 @@
 				<configuration>
 					<publishingServerId>ossrh</publishingServerId>
 					<autoPublish>true</autoPublish>
-					<deploymentName>mvnplugin.validate-enum-str-0.9.3</deploymentName>
+					<deploymentName>mvnplugin.validate-enum-str-0.9.4</deploymentName>
 				</configuration>
 			</plugin>
 		</plugins>
