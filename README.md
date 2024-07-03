@@ -15,12 +15,12 @@ To use this, Include the below in your project plugins section of pom.xml
 			<plugin>
 				<groupId>com.merusphere.devops</groupId>
 				<artifactId>mvnplugin.validate-enum-str</artifactId>
-				<version>0.9.1</version>
+				<version>0.9.3</version>
 				<executions>
 					<execution>
-						<id>compile</id>
+						<phase>compile</phase>
 						<goals>
-							<goal>compile</goal>
+							<goal>validate-enum-str</goal>
 						</goals>
 					</execution>
 				</executions>
@@ -37,7 +37,16 @@ To use this, Include the below in your project plugins section of pom.xml
 		* Description : Name of the Java Package contains all the Hibernate Model Classes
 		* Example : com.merusphere.dao.model
 	
+## How to run this plugin in your projects
 
+Note : This PlugIn runs as part of the Maven Phase: compile
+If you want to fire it, use the Goal : validate-enum-str
+
+```
+mvn clean compile
+or
+mvn clean install
+```
 
 # How to develop this PlugIn based on your requirements
 
