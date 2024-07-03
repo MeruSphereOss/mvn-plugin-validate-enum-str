@@ -1,12 +1,13 @@
-# Maven PlugIn :: validate-enum-str
-This PlugiN will Validate Enum attributes in the Hibernate Model Class have Enumerated String annotation or not
+# Maven Plugin :: validate-enum-str
+This Plugin will Validate Enum attributes in the Hibernate Model Class have Enumerated String annotation or not
 
 ## Problem Statement
+This Plugin will Validate Enum attributes in the Hibernate Model Class have Enumerated String annotation or not
 
 ## Solution
+This Plugin will Validate Enum attributes in the Hibernate Model Class have Enumerated String annotation or not
 
-
-# How to use this PlugIn in your project
+# How to use this Plugin in your project
 
 To use this, Include the below in your project plugins section of pom.xml
 
@@ -14,12 +15,12 @@ To use this, Include the below in your project plugins section of pom.xml
 			<plugin>
 				<groupId>com.merusphere.devops</groupId>
 				<artifactId>mvnplugin.validate-enum-str</artifactId>
-				<version>0.9.1</version>
+				<version>0.9.4</version>
 				<executions>
 					<execution>
-						<id>compile</id>
+						<phase>compile</phase>
 						<goals>
-							<goal>compile</goal>
+							<goal>validate-enum-str</goal>
 						</goals>
 					</execution>
 				</executions>
@@ -33,10 +34,19 @@ To use this, Include the below in your project plugins section of pom.xml
 * pkg : Name of the Java Package contains all the Hibernate Model Classes
 		* Default value : No Default value
 		* Mandatory : Mandatory
-		* Description : 
-		* Example : 
+		* Description : Name of the Java Package contains all the Hibernate Model Classes
+		* Example : com.merusphere.dao.model
 	
+## How to run this plugin in your projects
 
+Note : This PlugIn runs as part of the Maven Phase: compile
+If you want to fire it, use the Goal : validate-enum-str
+
+```
+mvn clean compile
+or
+mvn clean install
+```
 
 # How to develop this PlugIn based on your requirements
 
@@ -67,5 +77,5 @@ Please refer to https://github.com/MeruSphereOss/mvn-plugin-validate-enum-str/re
 Please report all the issues to Gitub issues https://github.com/MeruSphereOss/mvn-plugin-validate-enum-str/issues
 
 ## Contribution
-Please finish your development and create branch then Please crate a Github Issue at Gitub issues https://github.com/MeruSphereOss/mvn-plugin-validate-enum-str/issues with the feature details & branch details. One of the Maintainer will co-ordinate with you.
+Please finish your development and create branch then Please create a Github Issue at Gitub issues https://github.com/MeruSphereOss/mvn-plugin-validate-enum-str/issues with the feature details & branch details. One of the Maintainer will co-ordinate with you.
 

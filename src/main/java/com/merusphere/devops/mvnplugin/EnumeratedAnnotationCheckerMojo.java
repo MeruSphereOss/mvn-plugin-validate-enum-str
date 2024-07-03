@@ -1,7 +1,11 @@
 package com.merusphere.devops.mvnplugin;
 
+import java.io.File;
 import java.lang.reflect.Field;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -10,6 +14,7 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Table;
 
+import org.apache.maven.artifact.Artifact;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
@@ -25,7 +30,7 @@ import org.reflections.Reflections;
  * Annotation or not and also checks that for enum fields containing enumerated
  * annotation, whether enumerated annotation contains Enum String Value or not
  */
-@Mojo(name = "validate-enum-str", defaultPhase = LifecyclePhase.PROCESS_RESOURCES, requiresDependencyResolution = ResolutionScope.TEST)
+@Mojo(name = "validate-enum-str", defaultPhase = LifecyclePhase.COMPILE, requiresDependencyResolution = ResolutionScope.COMPILE)
 public class EnumeratedAnnotationCheckerMojo extends AbstractMojo {
 
 	/**
@@ -53,6 +58,42 @@ public class EnumeratedAnnotationCheckerMojo extends AbstractMojo {
 			if (getLog().isInfoEnabled()) {
 				getLog().info(new StringBuffer("Using Package " + pkg));
 			}
+
+			// Load the Class File information
+			Set<URL> urls = new HashSet<>();
+			List<String> testElements = project.getTestClasspathElements();
+			for (String element : testElements) {
+				urls.add(new File(element).toURI().toURL());
+			}
+			List<String> runtimeElements = project.getRuntimeClasspathElements();
+			for (String element : runtimeElements) {
+				urls.add(new File(element).toURI().toURL());
+			}
+			List<String> compiletimeElements = project.getCompileClasspathElements();
+			for (String element : compiletimeElements) {
+				urls.add(new File(element).toURI().toURL());
+			}
+			List<String> systemtimeElements = project.getSystemClasspathElements();
+			for (String element : systemtimeElements) {
+				urls.add(new File(element).toURI().toURL());
+			}
+			Set<Artifact> artifactSet = project.getArtifacts();
+			for (Artifact artft : artifactSet) {
+				urls.add(artft.getFile().toURI().toURL());
+			}
+
+			if (getLog().isInfoEnabled()) {
+				getLog().info("Classpath Found " + urls.size() + " Classses");
+			}
+			for (URL url : urls) {
+				getLog().info("URL file " + url.getFile());
+			}
+
+			// Load the Classpath
+			ClassLoader contextClassLoader = URLClassLoader.newInstance(urls.toArray(new URL[urls.size()]),
+					Thread.currentThread().getContextClassLoader());
+
+			Thread.currentThread().setContextClassLoader(contextClassLoader);
 
 			Reflections reflections = new Reflections(pkg);
 			Set<Class<?>> clazzSet = reflections.getTypesAnnotatedWith(Table.class, true);
