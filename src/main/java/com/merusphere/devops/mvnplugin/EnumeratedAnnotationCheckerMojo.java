@@ -154,11 +154,11 @@ public class EnumeratedAnnotationCheckerMojo extends AbstractMojo {
 			}
 
 			if (!enumeratedAnnotationAbsenceList.isEmpty() || !enumeratedStringAbsenceList.isEmpty()) {
-				new MojoExecutionException("Found Enumerated Errors in the Model Classes");
+				throw new MojoExecutionException("Found Enumerated Errors in the Model Classes");
 			}
 		} catch (Exception e) {
 			getLog().error(e.getMessage(), e);
-			new MojoExecutionException(e.getMessage(), e);
+			throw new MojoExecutionException(e.getMessage(), e);
 		}
 	}
 
