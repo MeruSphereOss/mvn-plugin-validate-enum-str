@@ -40,6 +40,13 @@ public class EnumeratedAnnotationCheckerMojo extends AbstractMojo {
 	@Parameter(property = "pkg")
 	String pkg;
 
+	
+	/**
+	 * If set to true, skips the enum validation check during the build.
+	 */
+	@Parameter(property = "skipEnumStrAnnValidation", defaultValue = "false")
+	boolean skipEnumStrAnnValidation;
+	
 	/**
 	 * Gives access to the Maven project information.
 	 */
@@ -51,8 +58,13 @@ public class EnumeratedAnnotationCheckerMojo extends AbstractMojo {
 	 */
 	public void execute() throws MojoExecutionException, MojoFailureException {
 		try {
-			if (pkg == null || pkg.trim().length() <= 0) {
-				new MojoExecutionException("Package name can't be null for the project : " + project.getName());
+			if (skipEnumStrAnnValidation) {
+			    getLog().info("Skipping enum validation as skipEnumStrAnnValidation is set to true");
+			    return;
+			}
+			
+			if (pkg == null || pkg.trim().isEmpty()) {
+				throw new MojoExecutionException("Package name can't be null for the project : " + project.getName());
 			}
 
 			if (getLog().isInfoEnabled()) {
